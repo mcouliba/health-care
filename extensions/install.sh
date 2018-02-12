@@ -2,4 +2,4 @@
 
 injected_dir=$1
 source /usr/local/s2i/install-common.sh
-install_modules ${injected_dir}/modules
+#install_modules ${injected_dir}/modules
