@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <vdb name="RTDS" version="1">
 <description/>
-<property name="validationDateTime" value="Mon Feb 12 14:15:07 CET 2018"/>
+<property name="validationDateTime" value="Mon Feb 12 14:16:47 CET 2018"/>
 <property name="validationVersion" value="9.0.0"/>
 <model name="PATIENT_HISTORY">
 <source connection-jndi-name="java:jboss/mrDS" name="PATIENT_HISTORY" translator-name="postgresql"/>
@@ -190,7 +190,7 @@ CREATE FOREIGN TABLE Measurements (
 ]]></metadata>
 </model>
 <model name="PatientMatCache">
-<source connection-jndi-name="java:/" name="PatientMatCache" translator-name="infinispan-cache-dsl"/>
+<source connection-jndi-name="java:/PatientMatCache" name="PatientMatCache" translator-name="infinispan-cache-dsl"/>
 <metadata type="DDL"><![CDATA[
 
 CREATE FOREIGN TABLE Patient (
