@@ -21,7 +21,7 @@ LABEL name="CUSTOM MODULES" \
       version="1.0"
 
 # Copy add-on details
-COPY install.sh \
-     /extensions/
+COPY install.sh /extensions/
+COPY data /extensions/data/
 #COPY modules /extensions/modules/
 
