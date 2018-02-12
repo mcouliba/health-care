@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <vdb name="RTDS" version="1">
 <description/>
-<property name="validationDateTime" value="Thu Jun 23 17:00:16 CEST 2016"/>
+<property name="validationDateTime" value="Mon Feb 12 14:15:07 CET 2018"/>
 <property name="validationVersion" value="9.0.0"/>
 <model name="PATIENT_HISTORY">
 <source connection-jndi-name="java:jboss/mrDS" name="PATIENT_HISTORY" translator-name="postgresql"/>
@@ -190,8 +190,35 @@ CREATE FOREIGN TABLE Measurements (
 ]]></metadata>
 </model>
 <model name="PatientMatCache">
-<source connection-jndi-name="PatientMatCache" name="PatientMatCache" translator-name="infinispan-cache-dsl"/>
+<source connection-jndi-name="java:/" name="PatientMatCache" translator-name="infinispan-cache-dsl"/>
 <metadata type="DDL"><![CDATA[
+
+CREATE FOREIGN TABLE Patient (
+	id integer NOT NULL,
+	dateRead string(15) NOT NULL,
+	dia integer NOT NULL,
+	glucoseLabel string(25) NOT NULL,
+	glucoseType string(25) NOT NULL,
+	glucoseValue integer NOT NULL,
+	mam string(10) NOT NULL,
+	map integer NOT NULL,
+	note string(255),
+	pulse integer NOT NULL,
+	sys integer NOT NULL,
+	firstName string(20) NOT NULL,
+	lastName string(50) NOT NULL,
+	gender string(1) NOT NULL,
+	birthDate string(10),
+	age integer NOT NULL,
+	highBpHistory string(10),
+	smokingHistory string(10),
+	currentSmoker string(10),
+	medication string(50),
+	diagnosticCode string(25),
+	lastPrimaryCareVisit string(25),
+	title string(50),
+	CONSTRAINT NewPrimaryKey PRIMARY KEY(id, dateRead)
+) OPTIONS(NAMEINSOURCE 'MV1000001', UPDATABLE 'TRUE');
 
 ]]></metadata>
 </model>
