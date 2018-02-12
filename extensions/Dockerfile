@@ -23,5 +23,5 @@ LABEL name="CUSTOM MODULES" \
 # Copy add-on details
 COPY install.sh /extensions/
 COPY data /extensions/data/
-#COPY modules /extensions/modules/
+COPY modules /extensions/modules/
 
